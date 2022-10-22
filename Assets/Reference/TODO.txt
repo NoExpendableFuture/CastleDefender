@@ -1,0 +1,108 @@
+A LIGHT IN THE DARK (Working title)
+
+----------------------------
+
+Project initial scope - create a game in a week (maybe two - do still have to do the day job, cook, wash etc :/)
+
+General idea - Zelda-ish game where the player avatar must fend off attacking enemies in a self contained level, and solve some (fairly simple) puzzles to get a special power orb that will activate, end the flow/respawning of enemies, then open level exit to complete the level
+
+Visual style... maybe a bit like Crypt of the Necrodancer? top down, but a little from the front?
+
+Needs:
+
+Camera
+---------
+With ability to track a target (ie. player and the exit door when it disintegrates) and switch between the two when needed
+
+Player 
+------
+Movement states - idle, walk, run(? optional, maybe later), attack - try and make a nice generic state class for this to switch between them
+
+Collision
+
+Marked/Unmarked status (so enemy knows when to start pursuit)
+
+Health meter
+
+Attacks
+
+Animations
+
+Respawn mechanics
+
+Terrain
+-------
+
+Tile based system for laying out new terrain... which to use? Inbuilt one should work, just make sure to set up as per this: https://www.youtube.com/watch?v=VDdKv0DgY5I
+
+Sprites/animations for tiles
+
+Enemies
+------
+Two enemy types to start:
+
+One phantom that floats around freely (ignores terrain - bonus if it shows some animation going through the wall) to attack the player. When killed immediately revives at it's spawn point (some suitably creepy dimensional tear... thing)
+
+And a skeleton enemy that walks around and is bound by level geometry same as the player. Once killed, will stay down for a period of time before reviving until orb is acquired
+
+These will need the movement and attack systems used by player, plus some simple AI to point them straight to the player (for phantom) and guide via pathfinding (for skellys)
+
+Allow player to move freely until first enemy encounter, then they'll be "marked" (maybe an effect at sides of the screen) and pursued until they get the orb
+
+For each:
+Health meter
+
+Attacks
+
+Animations
+
+Respawn mechanics
+
+
+Level/Puzzles
+-----
+
+"Level ending" orb item and associated triggers/effects
+	- Maybe a shader
+
+Exit point - probably a door - maybe a really big solid/evil looking door player uses the item to blast through :D
+
+Terrain to block the player
+
+Doors player can open using triggers player can activate (whether via activate key - or maybe just attack them?)
+
+Switches? Preferably activate via attack (so I don't have to implement another button... might do the same for level complete orb, could be kinda satisfying)
+
+Block pushing puzzles?
+
+Hazards
+
+Checkpoints
+---------
+Trigger points/zones across the level - add each to a list when player crosses them, most recent first.
+
+When player dies, respawn at most recent checkpoint not currently threatened by an enemy
+
+
+------------
+
+And of course graphics and sound for all of the above :/
+
+----------------------------
+
+Timetable
+-------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
+Sunday 23 Oct - setup and prep
+
+Create a git repo: done
+
+Create a Unity Project: done
+
+Draft up todo tasks, timetable and brainstorm what to put in this thing: in progress
+
+Player and movement states: not started
+
+Player with movement and terrain to move around (blocking only - no sprites yet)
+
