@@ -102,7 +102,9 @@ Create a Unity Project: done
 
 Draft up todo tasks, timetable and brainstorm what to put in this thing: in progress
 
-Player and movement states: not started
+Camera: done
 
-Player with movement and terrain to move around (blocking only - no sprites yet)
+Terrain to move around (blocking only - no sprites yet): done
+
+Player with movement states: in progress
 
