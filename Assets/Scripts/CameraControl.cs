@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Threading;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,7 +30,7 @@ public class CameraControl : MonoBehaviour
             targetPosition2D = new Vector3(target.position.x, target.position.y, transform.position.z);
             ClampCameraToLevelBounds(true);
         }
-        transform.position = Vector3.Lerp(transform.position, targetPosition2D, smoothing);
+        transform.position = Vector3.Lerp(transform.position, targetPosition2D, smoothing * Time.deltaTime);
     }
 
     private void ClampCameraToLevelBounds(bool smoothPan)

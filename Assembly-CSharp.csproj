@@ -39,6 +39,10 @@
      <Compile Include="Assets\Scripts\Actors\Actor.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorInput.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorInputPlayer.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorState.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorStateFactory.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorStateIdle.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorStateWalk.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <None Include="Assets\Reference\TODO.txt" />
     <Reference Include="UnityEngine">

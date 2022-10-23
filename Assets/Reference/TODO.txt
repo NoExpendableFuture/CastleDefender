@@ -58,6 +58,12 @@ Animations
 
 Respawn mechanics
 
+Hazards
+--------
+Two types - Demon-Fire and spike panels
+
+Fire causes DOT, Spikes a one-off damage
+
 
 Level/Puzzles
 -----
@@ -75,7 +81,6 @@ Switches? Preferably activate via attack (so I don't have to implement another b
 
 Block pushing puzzles?
 
-Hazards
 
 Checkpoints
 ---------
@@ -92,19 +97,37 @@ And of course graphics and sound for all of the above :/
 
 Timetable
 -------------------------------------------------------------------------
+Tuesday 25 Oct - Hazards
+
+Player health
+
+Spikes
+
+Demon-fire
+
+-------------------------------------------------------------------------
+Monday 24 Oct - Add level exit and orb
+
+Player attack (to hit orb)
+
+Orb
+
+Door
 
 -------------------------------------------------------------------------
 Sunday 23 Oct - setup and prep
+
+Ahead of schedule today :) All done by 4pm
+
+Draft up todo tasks, timetable and brainstorm what to put in this thing: done
 
 Create a git repo: done
 
 Create a Unity Project: done
 
-Draft up todo tasks, timetable and brainstorm what to put in this thing: in progress
-
 Camera: done
 
 Terrain to move around (blocking only - no sprites yet): done
 
-Player with movement states: in progress
+Player with movement states: done
 
