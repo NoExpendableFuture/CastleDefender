@@ -16,6 +16,7 @@ public interface ActorState
 public enum ActorStates {
     IDLE,
     WALK,
+    INACTIVE
 }
 
 // TODO: Actor state factory using the states pls

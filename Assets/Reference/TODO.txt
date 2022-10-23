@@ -16,7 +16,7 @@ With ability to track a target (ie. player and the exit door when it disintegrat
 
 Player 
 ------
-Movement states - idle, walk, run(? optional, maybe later), attack - try and make a nice generic state class for this to switch between them
+Movement states - idle, walk, attack, run(? optional, maybe later) - try and make a nice generic state class for this to switch between them
 
 Collision
 
@@ -25,6 +25,8 @@ Marked/Unmarked status (so enemy knows when to start pursuit)
 Health meter
 
 Attacks
+	Melee - sword
+	Range - spellcasting? Later.
 
 Animations
 
@@ -96,10 +98,24 @@ And of course graphics and sound for all of the above :/
 ----------------------------
 
 Timetable
+
+-------------------------------------------------------------------------
+Friday 27 Oct - Skellies
+
+-------------------------------------------------------------------------
+Thursday 27 Oct - Skellies
+
+-------------------------------------------------------------------------
+Wednesday 26 Oct - Phantoms
+
+Phantom enemy
+
+Player "marking"
+
 -------------------------------------------------------------------------
 Tuesday 25 Oct - Hazards
 
-Player health
+Player health, game over state and respawning
 
 Spikes
 
@@ -108,16 +124,29 @@ Demon-fire
 -------------------------------------------------------------------------
 Monday 24 Oct - Add level exit and orb
 
-Player attack (to hit orb)
+Exit point
+	- Add trigger, and show "you win" pop-up when activated: done
+	- Level restart: done
+	
+End door
+	- Basic graphics: done
+	- Make a triggerable door: not started
+	- fade out animation: not started
+	
+Player attack (to hit orb): not started
 
 Orb
-
-Door
+	- Basic graphic: done
+	- Act as trigger for exit door: not started
+	- Floating effect: not started
+	- Glow effect with "pulsing": not started
+	- Shatter effect across screen: not started
+	- Zoom to door opening then back after shatter: not started
 
 -------------------------------------------------------------------------
 Sunday 23 Oct - setup and prep
 
-Ahead of schedule today :) All done by 4pm
+Ahead of schedule today :) All done by 4pm, started on Monday stuff
 
 Draft up todo tasks, timetable and brainstorm what to put in this thing: done
 

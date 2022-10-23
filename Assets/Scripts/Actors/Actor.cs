@@ -10,6 +10,7 @@ public class Actor : MonoBehaviour
     private Rigidbody2D rb;
     private ActorState actorState;
     private ActorStateFactory actorStateFactory = new ActorStateFactory();
+    public ActorType actorType;
 
     void Start()
     {
@@ -20,7 +21,6 @@ public class Actor : MonoBehaviour
 
     void Update()
     {
-        setMovementState();
         Vector2 direction = input.getMoveDirection().normalized;
         
         if(actorState.AllowMove()) {
@@ -42,7 +42,13 @@ public class Actor : MonoBehaviour
         }
     }
 
-    private void setMovementState() {
-
+    public void SetInactive() {
+        actorState.StateDeactivate();
+        actorState = actorStateFactory.Build(ActorStates.INACTIVE);
+        actorState.StateActivate();
     }
+}
+
+public enum ActorType {
+    Player
 }
