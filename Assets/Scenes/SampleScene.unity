@@ -1359,7 +1359,7 @@ MonoBehaviour:
   actorType: 0
   meleeAttack: {fileID: 5928897159383958237, guid: cb75e1a33ec300647a5e39cc8eeb315b,
     type: 3}
-  meleeAttackDuration: 0.3
+  meleeAttackDuration: 0.15
 --- !u!1 &1440520565
 GameObject:
   m_ObjectHideFlags: 0

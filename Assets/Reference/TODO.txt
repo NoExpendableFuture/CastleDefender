@@ -136,6 +136,8 @@ Player "marking"
 -------------------------------------------------------------------------
 Tuesday 25 Oct - Hazards
 
+Player attack - make sword "swing": done in wee hours of the morning :D
+	
 Player health, game over state and respawning
 
 Spikes
