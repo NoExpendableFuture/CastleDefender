@@ -14,6 +14,9 @@ public class Actor : MonoBehaviour
     public ActorType actorType;
     public PlayerSwordAttack meleeAttack;
 
+    // TODO: May be time to split off player and standard actor behaviour... shouldn't have this for general actors...
+    public LevelEndPopUp gameOverPrompt;
+
     private ActorFacing facing = ActorFacing.TOP;
 
     public float meleeAttackDuration = 1f;
@@ -58,6 +61,15 @@ public class Actor : MonoBehaviour
             
             Vector3 targetPos = new Vector3(targetX, targetY, transform.position.z);
             rb.MovePosition(targetPos);
+        }
+    }
+
+    public void Kill() {
+        actorState.StateDeactivate();
+        actorState = actorStateFactory.Build(ActorStates.DEAD);
+        actorState.StateActivate(this);
+        if(gameObject.tag == "Player") {
+            gameOverPrompt.ShowPopup();
         }
     }
 

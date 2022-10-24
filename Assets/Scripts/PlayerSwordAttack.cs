@@ -14,12 +14,6 @@ public class PlayerSwordAttack : MonoBehaviour
     private float zRotationInitial, zRotationEnd;
     private Quaternion currentRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -27,10 +21,6 @@ public class PlayerSwordAttack : MonoBehaviour
     }
 
     public void initialise(ActorFacing facing, float timeToDespawn) {
-        // TODO: Rotate so it's relative to where player's facing, and will "Swing" across from start to end rotation before disappearing
-        // Vector3 facingVector = new Vector3(0f, 0f, initialRotation) * Time.deltaTime * rotationSpeed;
-        // Vector3 facingVector = new Vector3(0f, 0f, endRotation);// * Time.deltaTime * rotationSpeed;
-
         float playerRotation = 0f;
         if(facing == ActorFacing.TOP) {
             playerRotation = 0f;

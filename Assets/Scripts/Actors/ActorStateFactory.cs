@@ -15,6 +15,8 @@ public class ActorStateFactory
             return new ActorStateInactive();
         case ActorStates.MELEE:
             return new ActorStateAttack();
+        case ActorStates.DEAD:
+            return new ActorStateDead();            
         default: 
             return new ActorStateIdle();
         }

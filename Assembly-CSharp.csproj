@@ -37,21 +37,25 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Actors\Actor.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorHealth.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorInput.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorInputPlayer.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorState.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateAttack.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorStateDead.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateFactory.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateIdle.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateInactive.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateWalk.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\Hazard.cs" />
      <Compile Include="Assets\Scripts\LevelEndPopUp.cs" />
      <Compile Include="Assets\Scripts\LevelExit.cs" />
      <Compile Include="Assets\Scripts\Orb.cs" />
      <Compile Include="Assets\Scripts\PlayerSwordAttack.cs" />
      <Compile Include="Assets\Scripts\Puzzle.cs" />
      <Compile Include="Assets\Scripts\PuzzleDoor.cs" />
+     <Compile Include="Assets\Scripts\Spikes.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

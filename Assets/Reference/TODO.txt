@@ -139,9 +139,17 @@ Tuesday 25 Oct - Hazards
 Player attack - make sword "swing": done in wee hours of the morning :D
 	
 Player health, game over state and respawning
+	- Invincibility frames: added
+		- Animate: not started
+	- Kill player if out of health: done
+		- Animate: not started
+		
+Spikes: in progress
+	- apply injury to player when walking over: done
+	- Animate: not started
 
-Spikes
-
+Split player and base actor scripts: not started
+	
 Demon-fire
 
 -------------------------------------------------------------------------

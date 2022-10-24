@@ -20,7 +20,8 @@ public enum ActorStates {
     IDLE,
     WALK,
     INACTIVE,
-    MELEE
+    MELEE,
+    DEAD
 }
 
 // TODO: Actor state factory using the states pls
