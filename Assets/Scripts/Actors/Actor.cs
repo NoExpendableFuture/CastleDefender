@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class Actor : MonoBehaviour
     private ActorState actorState;
     private ActorStateFactory actorStateFactory = new ActorStateFactory();
     public ActorType actorType;
+    public PlayerSwordAttack meleeAttack;
+
+    private ActorFacing facing = ActorFacing.TOP;
+
+    public float meleeAttackDuration = 1f;
 
     void Start()
     {
@@ -23,15 +29,28 @@ public class Actor : MonoBehaviour
     {
         Vector2 direction = input.getMoveDirection().normalized;
         
+        if(actorState.AllowMelee() && input.isDoMeleeAttack()) {
+            actorState.StateDeactivate();
+
+            PlayerSwordAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
+            attackInst.initialise(facing, meleeAttackDuration);
+
+            actorState = actorStateFactory.Build(ActorStates.MELEE);
+            actorState.StateActivate(this, () => {
+                this.CallbackStateDeactivating();
+            }, meleeAttackDuration);
+        }
+
         if(actorState.AllowMove()) {
             if(direction.magnitude > 0f) {
                actorState.StateDeactivate();
                actorState = actorStateFactory.Build(ActorStates.WALK);
-               actorState.StateActivate();
-            } else {                
+               actorState.StateActivate(this);
+               setFacing(direction);
+            } else {
                actorState.StateDeactivate();
                actorState = actorStateFactory.Build(ActorStates.IDLE);
-               actorState.StateActivate();
+               actorState.StateActivate(this);
             }
 
             float targetX = transform.position.x + direction.x * walkSpeed * Time.deltaTime;
@@ -45,10 +64,42 @@ public class Actor : MonoBehaviour
     public void SetInactive() {
         actorState.StateDeactivate();
         actorState = actorStateFactory.Build(ActorStates.INACTIVE);
-        actorState.StateActivate();
+        actorState.StateActivate(this);
+    }
+    
+    public void CallbackStateDeactivating() {
+        actorState.StateDeactivate();
+        actorState = actorStateFactory.Build(ActorStates.IDLE);
+        actorState.StateActivate(this);
+    }
+
+    private void setFacing(Vector2 moveDirection) {
+        if(Mathf.Abs(moveDirection.y) > Mathf.Abs(moveDirection.x)) {
+            // One of the verticals
+            if(moveDirection.y >= 0f) {
+                facing = ActorFacing.TOP;
+            } else {
+                facing = ActorFacing.BOTTOM;
+            }
+        } else {
+            // One of the horizontals
+            if(moveDirection.x >= 0f) {
+                facing = ActorFacing.RIGHT;
+            } else {
+                facing = ActorFacing.LEFT;
+            }
+        }
+        // TODO: Update facing animation!
     }
 }
 
 public enum ActorType {
     Player
+}
+
+public enum ActorFacing {
+    TOP,
+    LEFT,
+    RIGHT,
+    BOTTOM
 }

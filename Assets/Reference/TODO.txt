@@ -100,7 +100,28 @@ And of course graphics and sound for all of the above :/
 Timetable
 
 -------------------------------------------------------------------------
-Friday 27 Oct - Skellies
+Saturday 28 Oct - Polish - round 2
+
+Any overflow from previous days goes here
+
+-------------------------------------------------------------------------
+Friday 27 Oct - Polish - round 1
+
+Any overflow from previous days goes here
+
+Player
+	- improve graphix
+	- facing animation!
+
+End door 
+	- improve graphix
+	- fade out animation
+
+Orb
+	- Floating effect: not started
+	- Glow effect with "pulsing": not started
+	- Shatter effect across screen: not started
+	- Zoom to door opening then back after shatter: not started
 
 -------------------------------------------------------------------------
 Thursday 27 Oct - Skellies
@@ -123,25 +144,23 @@ Demon-fire
 
 -------------------------------------------------------------------------
 Monday 24 Oct - Add level exit and orb
-
+	- Yeah, might have been a bit optimistic here on initial planning. Having to remember how coroutines and Action worked slowed things down a bit. Most of the animation/polish stuff carried over :(
+	
 Exit point
 	- Add trigger, and show "you win" pop-up when activated: done
 	- Level restart: done
 	
 End door
 	- Basic graphics: done
-	- Make a triggerable door: not started
-	- fade out animation: not started
+	- Make a triggerable door: done
 	
-Player attack (to hit orb): not started
+Player attack (to hit orb): in progress
+	- make sword "swing": not started
 
 Orb
 	- Basic graphic: done
-	- Act as trigger for exit door: not started
-	- Floating effect: not started
-	- Glow effect with "pulsing": not started
-	- Shatter effect across screen: not started
-	- Zoom to door opening then back after shatter: not started
+	- Act as trigger for exit door: done	
+	- replace above with activate door on player attack: done
 
 -------------------------------------------------------------------------
 Sunday 23 Oct - setup and prep

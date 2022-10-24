@@ -1,10 +1,5 @@
 public class ActorStateFactory
 {
-    private ActorState idleState = new ActorStateIdle();
-    private ActorState walkState = new ActorStateWalk();
-    private ActorState inactiveState = new ActorStateInactive();
-
-
     public ActorStateFactory() {
 
     }
@@ -13,13 +8,15 @@ public class ActorStateFactory
         switch(toBuild) 
         {
         case ActorStates.IDLE:
-            return idleState;
+            return new ActorStateIdle();
         case ActorStates.WALK:
-            return walkState;
+            return new ActorStateWalk();
         case ActorStates.INACTIVE:
-            return inactiveState;
+            return new ActorStateInactive();
+        case ActorStates.MELEE:
+            return new ActorStateAttack();
         default: 
-            return idleState;
+            return new ActorStateIdle();
         }
     }
 }

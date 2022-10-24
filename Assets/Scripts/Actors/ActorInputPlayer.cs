@@ -15,4 +15,8 @@ public class ActorInputPlayer : MonoBehaviour, ActorInput
 
         return change;
     }
+
+    public bool isDoMeleeAttack() {
+        return Input.GetButtonDown("Fire1");
+    }
 }
