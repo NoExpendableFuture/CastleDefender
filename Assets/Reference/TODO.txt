@@ -100,18 +100,19 @@ And of course graphics and sound for all of the above :/
 Timetable
 
 -------------------------------------------------------------------------
-Saturday 28 Oct - Polish - round 2
+Sunday 29 Oct - Polish - round 2
 
 Any overflow from previous days goes here
 
 -------------------------------------------------------------------------
-Friday 27 Oct - Polish - round 1
+Saturday 28 Oct - Polish - round 1
 
 Any overflow from previous days goes here
 
 Player
 	- improve graphix
 	- facing animation!
+	- Injury/kill/invincibility frames animation
 
 End door 
 	- improve graphix
@@ -123,34 +124,46 @@ Orb
 	- Shatter effect across screen: not started
 	- Zoom to door opening then back after shatter: not started
 
+UI
+	- Health display with hearts: not started
+	
+Sound!
+	
 -------------------------------------------------------------------------
-Thursday 27 Oct - Skellies
+Friday 28 Oct - More stuff
+
+Skellies
+
+Demon-fire
+
+Wall/Floor graphics
 
 -------------------------------------------------------------------------
-Wednesday 26 Oct - Phantoms
+Thursday 27 Oct - Phantoms
+
+Split player and base actor scripts: not started
 
 Phantom enemy
 
 Player "marking"
 
 -------------------------------------------------------------------------
+Wed - skipped, had to Tax :/
+
+-------------------------------------------------------------------------
 Tuesday 25 Oct - Hazards
+	- was an abridged day... so sleepy... woke up early
 
 Player attack - make sword "swing": done in wee hours of the morning :D
 	
 Player health, game over state and respawning
 	- Invincibility frames: added
-		- Animate: not started
+	- Basic health display: done
 	- Kill player if out of health: done
-		- Animate: not started
-		
+
 Spikes: in progress
 	- apply injury to player when walking over: done
-	- Animate: not started
-
-Split player and base actor scripts: not started
-	
-Demon-fire
+	- Animate: done
 
 -------------------------------------------------------------------------
 Monday 24 Oct - Add level exit and orb

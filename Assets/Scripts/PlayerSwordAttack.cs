@@ -3,16 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSwordAttack : MonoBehaviour
+public class PlayerSwordAttack : MeleeAttack
 {
     private float swingInitialRotation = 90f;
     private float swingEndRotation = -90f;
     
-    private float duration;
-    private float elapsedTime = 0f;
-    private bool completed = false;
     private float zRotationInitial, zRotationEnd;
-    private Quaternion currentRotation;
 
     // Update is called once per frame
     void Update()
@@ -20,7 +16,7 @@ public class PlayerSwordAttack : MonoBehaviour
         elapsedTime += Time.deltaTime;
     }
 
-    public void initialise(ActorFacing facing, float timeToDespawn) {
+    public override void initialise(ActorFacing facing, float timeToDespawn) {
         float playerRotation = 0f;
         if(facing == ActorFacing.TOP) {
             playerRotation = 0f;
@@ -57,10 +53,4 @@ public class PlayerSwordAttack : MonoBehaviour
         }
     }
 
-    private void setRotationFromZPosition(float newZRotation) {    
-        Vector3 facingVector = new Vector3(0f, 0f, newZRotation);
-        currentRotation.eulerAngles = facingVector;
-
-        this.transform.rotation = currentRotation;
-    }
 }

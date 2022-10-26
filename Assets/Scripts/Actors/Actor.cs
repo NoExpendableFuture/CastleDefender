@@ -7,17 +7,13 @@ using UnityEngine;
 public class Actor : MonoBehaviour
 {
     public float walkSpeed = 1f;
-    private ActorInput input;
-    private Rigidbody2D rb;
-    private ActorState actorState;
-    private ActorStateFactory actorStateFactory = new ActorStateFactory();
+    protected ActorInput input;
+    protected Rigidbody2D rb;
+    protected ActorState actorState;
+    protected ActorStateFactory actorStateFactory = new ActorStateFactory();
     public ActorType actorType;
-    public PlayerSwordAttack meleeAttack;
 
-    // TODO: May be time to split off player and standard actor behaviour... shouldn't have this for general actors...
-    public LevelEndPopUp gameOverPrompt;
-
-    private ActorFacing facing = ActorFacing.TOP;
+    protected ActorFacing facing = ActorFacing.TOP;
 
     public float meleeAttackDuration = 1f;
 
@@ -30,20 +26,10 @@ public class Actor : MonoBehaviour
 
     void Update()
     {
+        DoMelee();
+
         Vector2 direction = input.getMoveDirection().normalized;
         
-        if(actorState.AllowMelee() && input.isDoMeleeAttack()) {
-            actorState.StateDeactivate();
-
-            PlayerSwordAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
-            attackInst.initialise(facing, meleeAttackDuration);
-
-            actorState = actorStateFactory.Build(ActorStates.MELEE);
-            actorState.StateActivate(this, () => {
-                this.CallbackStateDeactivating();
-            }, meleeAttackDuration);
-        }
-
         if(actorState.AllowMove()) {
             if(direction.magnitude > 0f) {
                actorState.StateDeactivate();
@@ -64,13 +50,12 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void Kill() {
+    protected virtual void DoMelee() { /** Override in subclasses*/ }
+
+    public virtual void Kill() {
         actorState.StateDeactivate();
         actorState = actorStateFactory.Build(ActorStates.DEAD);
         actorState.StateActivate(this);
-        if(gameObject.tag == "Player") {
-            gameOverPrompt.ShowPopup();
-        }
     }
 
     public void SetInactive() {

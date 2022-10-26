@@ -37,6 +37,14 @@ public class ActorHealth : MonoBehaviour {
         }
     }
 
+    public float GetMaxHealth() {
+        return maxHealth;
+    }
+
+    public float GetHealth() {
+        return health;
+    }
+
     private void getPhysicalDamage(Hazard hazard) {
         if(hazard.getPhysicalDamage() > 0f && !physicalDamageImmune) {
             // TODO: Animate the damage!
