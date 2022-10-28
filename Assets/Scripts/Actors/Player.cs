@@ -13,7 +13,7 @@ public class Player : Actor
             actorState.StateDeactivate();
 
             PlayerSwordAttack attackInst = Instantiate(playerSwordAttack, transform.position, Quaternion.identity);
-            attackInst.initialise(facing, meleeAttackDuration);
+            attackInst.initialise(facing, actorType, meleeAttackDuration);
 
             actorState = actorStateFactory.Build(ActorStates.MELEE);
             actorState.StateActivate(this, () => {

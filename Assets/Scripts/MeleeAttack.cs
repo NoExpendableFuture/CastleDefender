@@ -11,13 +11,18 @@ public class MeleeAttack : MonoBehaviour
     // private float zRotationInitial, zRotationEnd;
     protected Quaternion currentRotation;
 
+    public ActorType attackerType;
+
+    public float physicalDamage = 1f;
+
     // Update is called once per frame
     void Update()
     {
         elapsedTime += Time.deltaTime;
     }
 
-    public virtual void initialise(ActorFacing facing, float timeToDespawn) {
+    public virtual void initialise(ActorFacing facing, ActorType attackerType, float timeToDespawn) {
+        this.attackerType = attackerType;
         float playerRotation = 0f;
         if(facing == ActorFacing.TOP) {
             playerRotation = 0f;
@@ -42,9 +47,6 @@ public class MeleeAttack : MonoBehaviour
     {
         while(!completed) {
 
-            // float zRotationCurrent = Mathf.Lerp(zRotationInitial, zRotationEnd, (elapsedTime / duration)); 
-            // setRotationFromZPosition(zRotationCurrent);
-
             if(elapsedTime >= duration){
                 completed = true;
                 Destroy(gameObject);
@@ -60,4 +62,13 @@ public class MeleeAttack : MonoBehaviour
 
         this.transform.rotation = currentRotation;
     }
+
+    public float getPhysicalDamage() {
+        return physicalDamage;
+    }
+}
+
+public enum AttackSource {
+    PLAYER,
+    ENEMY
 }

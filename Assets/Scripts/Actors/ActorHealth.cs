@@ -6,9 +6,12 @@ public class ActorHealth : MonoBehaviour {
     public float maxHealth = 3f;
     private float health = 1f;
     
-    public float invincibilityTime = 0.75f;
+    public float invincibilityDuration = 0.75f;
     private bool invincibilityFramesActive = false;
-    private float invincibilityDuration = 0f;
+    private float invincibilityTimeElapsed = 0f;
+
+    public bool damagedByPlayer = true;
+    public bool damagedByEnemy = true;
 
     public bool physicalDamageImmune = false;
 
@@ -18,18 +21,32 @@ public class ActorHealth : MonoBehaviour {
 
     void Update() {
         if(invincibilityFramesActive) {
-            invincibilityDuration += Time.deltaTime;
-            if(invincibilityDuration >= invincibilityTime) {
+            invincibilityTimeElapsed += Time.deltaTime;
+            if(invincibilityTimeElapsed >= invincibilityDuration) {
                 invincibilityFramesActive = false;
+            }
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other) {
+        if(!invincibilityFramesActive && health > 0f) {
+            MeleeAttack meleeAttack = other.GetComponent<MeleeAttack>();
+            if(other.GetComponent<MeleeAttack>() != null) {
+                if(damagedByPlayer && meleeAttack.attackerType == ActorType.Player) {
+                    applyMeleeAttackDamage(meleeAttack);
+                }
+                if(damagedByEnemy && meleeAttack.attackerType == ActorType.Enemy) {
+                    applyMeleeAttackDamage(meleeAttack);
+                }
             }
         }
     }
 
     public void DamageWithHazard(Hazard hazard) {
         if(!invincibilityFramesActive && health > 0f) {
-            getPhysicalDamage(hazard);
+            applyPhysicalDamage(hazard);
             invincibilityFramesActive = true;
-            invincibilityDuration = 0f;
+            invincibilityTimeElapsed = 0f;
 
             if (health <= 0f) {
                 GetComponent<Actor>().Kill();
@@ -45,11 +62,28 @@ public class ActorHealth : MonoBehaviour {
         return health;
     }
 
-    private void getPhysicalDamage(Hazard hazard) {
+    private void applyMeleeAttackDamage(MeleeAttack meleeAttack) {
+        applyPhysicalDamage(meleeAttack);
+        invincibilityFramesActive = true;
+        invincibilityTimeElapsed = 0f;
+        if (health <= 0f) {
+            GetComponent<Actor>().Kill();
+        }
+    }
+
+    private void applyPhysicalDamage(Hazard hazard) {
         if(hazard.getPhysicalDamage() > 0f && !physicalDamageImmune) {
             // TODO: Animate the damage!
             health -= hazard.getPhysicalDamage();
-            UnityEngine.Debug.Log("OW!");
+            UnityEngine.Debug.Log("OW! Entered hazard");
+        }
+    }
+    
+    private void applyPhysicalDamage(MeleeAttack meleeAttack) {
+        if(meleeAttack.getPhysicalDamage() > 0f && !physicalDamageImmune) {
+            // TODO: Animate the damage!
+            health -= meleeAttack.getPhysicalDamage();
+            UnityEngine.Debug.Log("OW! Hit by attack " + meleeAttack.name);
         }
     }
 }

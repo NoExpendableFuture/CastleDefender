@@ -16,7 +16,8 @@ public class PlayerSwordAttack : MeleeAttack
         elapsedTime += Time.deltaTime;
     }
 
-    public override void initialise(ActorFacing facing, float timeToDespawn) {
+    public override void initialise(ActorFacing facing, ActorType attackerType, float timeToDespawn) {
+        this.attackerType = attackerType;
         float playerRotation = 0f;
         if(facing == ActorFacing.TOP) {
             playerRotation = 0f;

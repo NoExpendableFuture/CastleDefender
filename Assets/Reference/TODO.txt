@@ -153,8 +153,9 @@ Phantom enemy
 		- Feels like the attack is too sudden - might need enemy to pause and wind up a bit to give player a chance to get away, and a brief cooldown to allow counterattacking
 		- Wind up: done
 		- Cooldown: done
-	- Damage player
-	- Get hit by player melee attacks
+	- Damage player: done
+	- Get hit by player melee attacks: done
+	- Remove after killed: done
 	- Respawn
 
 -------------------------------------------------------------------------

@@ -94,7 +94,7 @@ public class Actor : MonoBehaviour
             if(meleeAttackWindUpTimeElapsed >= meleeAttackWindUpDuration && actorState.StateName() == ActorStateName.MELEE){
                 meleeAttackWindUpComplete = true;                
                 MeleeAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
-                attackInst.initialise(facing, meleeAttackDuration);
+                attackInst.initialise(facing, actorType, meleeAttackDuration);
             } 
 
             yield return null;
@@ -105,6 +105,8 @@ public class Actor : MonoBehaviour
         actorState.StateDeactivate();
         actorState = actorStateFactory.Build(ActorStates.DEAD);
         actorState.StateActivate(this);
+        // TODO: Show ded animation, just deleting object for now
+        Destroy(gameObject);
     }
 
     public void SetInactive() {
