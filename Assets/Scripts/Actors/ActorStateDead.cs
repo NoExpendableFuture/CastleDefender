@@ -6,7 +6,7 @@ using UnityEngine;
 public class ActorStateDead: ActorState
 {
    public string StateName() {
-      return "Dead";
+      return ActorStateName.DEAD;
    }
 
    public bool AllowMove() {

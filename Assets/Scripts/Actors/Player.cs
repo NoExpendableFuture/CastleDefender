@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Player : Actor
 {
-    public PlayerSwordAttack meleeAttack;
+    public PlayerSwordAttack playerSwordAttack;
     
     public LevelEndPopUp gameOverPrompt;
 
     protected override void DoMelee() {
-        if(actorState.AllowMelee() && input.isDoMeleeAttack()) {
+        if(actorState.AllowMelee() && input.isDoMeleeAttack() && hasMeleeAttack) {
             actorState.StateDeactivate();
 
-            PlayerSwordAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
+            PlayerSwordAttack attackInst = Instantiate(playerSwordAttack, transform.position, Quaternion.identity);
             attackInst.initialise(facing, meleeAttackDuration);
 
             actorState = actorStateFactory.Build(ActorStates.MELEE);

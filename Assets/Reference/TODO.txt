@@ -100,12 +100,12 @@ And of course graphics and sound for all of the above :/
 Timetable
 
 -------------------------------------------------------------------------
-Sunday 29 Oct - Polish - round 2
+Monday 31 Oct - Polish - round 2
 
 Any overflow from previous days goes here
 
 -------------------------------------------------------------------------
-Saturday 28 Oct - Polish - round 1
+Sunday 30 Oct - Polish - round 1
 
 Any overflow from previous days goes here
 
@@ -113,24 +113,28 @@ Player
 	- improve graphix
 	- facing animation!
 	- Injury/kill/invincibility frames animation
-
+	- Sword animation - more oomph at the end
+	
 End door 
 	- improve graphix
 	- fade out animation
 
 Orb
+	- Change graphic to look more like "light trapped inside a dark container"
 	- Floating effect: not started
 	- Glow effect with "pulsing": not started
 	- Shatter effect across screen: not started
 	- Zoom to door opening then back after shatter: not started
-
+	
 UI
 	- Health display with hearts: not started
 	
 Sound!
 	
 -------------------------------------------------------------------------
-Friday 28 Oct - More stuff
+Saturday 29 Oct - More stuff
+
+Player "marking"
 
 Skellies
 
@@ -139,16 +143,28 @@ Demon-fire
 Wall/Floor graphics
 
 -------------------------------------------------------------------------
-Thursday 27 Oct - Phantoms
 
-Split player and base actor scripts: not started
+Friday 28 Oct - Phantoms and player "marking"
 
 Phantom enemy
-
-Player "marking"
+	- Track and move to player: done
+	- Stop before reaching player to allow multiple melee strikes: done
+	- Hit player when in range (melee attack): done, but....
+		- Feels like the attack is too sudden - might need enemy to pause and wind up a bit to give player a chance to get away, and a brief cooldown to allow counterattacking
+		- Wind up: done
+		- Cooldown: done
+	- Damage player
+	- Get hit by player melee attacks
+	- Respawn
 
 -------------------------------------------------------------------------
-Wed - skipped, had to Tax :/
+Thursday 27 Oct - Phantoms
+Was planning to add phantoms today, but no work done :( Partly bad sleep, partly slow days at work draining energy
+
+Split player and base actor scripts: done
+
+-------------------------------------------------------------------------
+Wed - skipped :/
 
 -------------------------------------------------------------------------
 Tuesday 25 Oct - Hazards

@@ -60,12 +60,13 @@
      <Compile Include="Assets\Scripts\Actors\ActorHealth.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorInput.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorInputPlayer.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorInputPlayerChase.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorState.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateAttack.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateDead.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateFactory.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateIdle.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateInactive.cs" />
+     <Compile Include="Assets\Scripts\Actors\ActorStateMelee.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorStateWalk.cs" />
      <Compile Include="Assets\Scripts\Actors\Player.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />

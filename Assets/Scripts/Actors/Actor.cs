@@ -17,6 +17,17 @@ public class Actor : MonoBehaviour
 
     public float meleeAttackDuration = 1f;
 
+    public float meleeAttackWindUpDuration = 0.25f;
+    private float meleeAttackWindUpTimeElapsed = 0f;
+    private bool meleeAttackWindUpComplete = false;
+    
+    public float meleeAttackCoolDownDuration = 0.5f;
+    private float meleeAttackCoolDownTimeElapsed = 0f;
+    private bool meleeAttackOnCoolDown = false;
+
+    public MeleeAttack meleeAttack;
+    public bool hasMeleeAttack = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,7 +61,45 @@ public class Actor : MonoBehaviour
         }
     }
 
-    protected virtual void DoMelee() { /** Override in subclasses*/ }
+    protected virtual void DoMelee() { 
+        /** Basic method only - Override this in subclasses*/
+        // Check cooldown
+        if(meleeAttackOnCoolDown) {
+            meleeAttackCoolDownTimeElapsed += Time.deltaTime;
+            if(meleeAttackCoolDownTimeElapsed >= meleeAttackCoolDownDuration) {
+                meleeAttackOnCoolDown = false;
+            }
+        }
+        if(actorState.AllowMelee() && input.isDoMeleeAttack() && hasMeleeAttack && !meleeAttackOnCoolDown) {
+            // Commence attack
+            actorState.StateDeactivate();
+
+            actorState = actorStateFactory.Build(ActorStates.MELEE);
+            actorState.StateActivate(this, () => {
+                meleeAttackOnCoolDown = true;
+                meleeAttackCoolDownTimeElapsed = 0f;
+                this.CallbackStateDeactivating();
+            }, meleeAttackDuration);
+
+            meleeAttackWindUpTimeElapsed = 0f;
+            meleeAttackWindUpComplete = false;
+            StartCoroutine(WindUpMeleeAttack());
+        }
+    }
+
+    public IEnumerator WindUpMeleeAttack()
+    {
+        while(!meleeAttackWindUpComplete) {
+            meleeAttackWindUpTimeElapsed += Time.deltaTime;
+            if(meleeAttackWindUpTimeElapsed >= meleeAttackWindUpDuration && actorState.StateName() == ActorStateName.MELEE){
+                meleeAttackWindUpComplete = true;                
+                MeleeAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
+                attackInst.initialise(facing, meleeAttackDuration);
+            } 
+
+            yield return null;
+        }
+    }
 
     public virtual void Kill() {
         actorState.StateDeactivate();
@@ -91,7 +140,8 @@ public class Actor : MonoBehaviour
 }
 
 public enum ActorType {
-    Player
+    Player,
+    Enemy
 }
 
 public enum ActorFacing {

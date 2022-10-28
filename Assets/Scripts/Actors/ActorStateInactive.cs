@@ -6,7 +6,7 @@ using UnityEngine;
 public class ActorStateInactive: ActorState
 {
    public string StateName() {
-      return "Inactive";
+      return ActorStateName.INACTIVE;
    }
 
    public bool AllowMove() {

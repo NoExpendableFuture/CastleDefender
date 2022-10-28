@@ -23,5 +23,12 @@ public enum ActorStates {
     MELEE,
     DEAD
 }
+public static class ActorStateName
+{
+    public static String IDLE { get { return "Idle";} } 
+    public static String WALK { get { return "Walk";} } 
+    public static String INACTIVE { get { return "Inactive";} } 
+    public static String MELEE { get { return "Melee";} } 
+    public static String DEAD { get { return "Dead";} } 
+}
 
-// TODO: Actor state factory using the states pls

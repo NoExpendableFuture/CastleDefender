@@ -6,7 +6,7 @@ using UnityEngine;
 public class ActorStateWalk: ActorState
 {
    public string StateName() {
-      return "Walk";
+      return ActorStateName.WALK;
    }
 
    public bool AllowMove() {
