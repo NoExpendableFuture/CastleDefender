@@ -174,4 +174,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeHazard: 1
-  physicalDamage: 0.25
+  physicalDamage: 1.5

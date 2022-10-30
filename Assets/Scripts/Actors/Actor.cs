@@ -28,6 +28,8 @@ public class Actor : MonoBehaviour
     public MeleeAttack meleeAttack;
     public bool hasMeleeAttack = true;
 
+    public RespawnPoint spawnFromPoint;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -105,6 +107,9 @@ public class Actor : MonoBehaviour
         actorState.StateDeactivate();
         actorState = actorStateFactory.Build(ActorStates.DEAD);
         actorState.StateActivate(this);
+        if(spawnFromPoint != null) {
+            spawnFromPoint.SignalSpawnedActorDestroyed(this);
+        }
         // TODO: Show ded animation, just deleting object for now
         Destroy(gameObject);
     }
