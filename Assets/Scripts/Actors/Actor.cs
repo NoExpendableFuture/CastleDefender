@@ -30,6 +30,8 @@ public class Actor : MonoBehaviour
 
     public RespawnPoint spawnFromPoint;
 
+    private Vector2 knockbackForce;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -61,6 +63,13 @@ public class Actor : MonoBehaviour
             Vector3 targetPos = new Vector3(targetX, targetY, transform.position.z);
             rb.MovePosition(targetPos);
         }
+
+        if(actorState.StateName() == ActorStateName.KNOCKEDBACK) {            
+            float targetX = transform.position.x + knockbackForce.x * Time.deltaTime;
+            float targetY = transform.position.y + knockbackForce.y * Time.deltaTime;            
+            Vector3 targetPos = new Vector3(targetX, targetY, transform.position.z);
+            rb.MovePosition(targetPos);
+        }
     }
 
     protected virtual void DoMelee() { 
@@ -89,6 +98,23 @@ public class Actor : MonoBehaviour
         }
     }
 
+    // Call this from the health component when hit to initiate knockback
+    public void StartKnockback(Vector2 force, float duration) 
+    {
+        actorState = actorStateFactory.Build(ActorStates.KNOCKEDBACK);
+        knockbackForce = force;
+        actorState.StateActivate(this, EndKnockback, duration);       
+    }
+
+    // Pass this to the knockback component to end the knockback state and reset to idle
+    void EndKnockback() 
+    {
+        if (actorState.StateName() == ActorStateName.KNOCKEDBACK) {
+            actorState = actorStateFactory.Build(ActorStates.IDLE);
+            actorState.StateActivate(this);
+        }
+    }
+
     public IEnumerator WindUpMeleeAttack()
     {
         while(!meleeAttackWindUpComplete) {
@@ -96,7 +122,7 @@ public class Actor : MonoBehaviour
             if(meleeAttackWindUpTimeElapsed >= meleeAttackWindUpDuration && actorState.StateName() == ActorStateName.MELEE){
                 meleeAttackWindUpComplete = true;                
                 MeleeAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
-                attackInst.initialise(facing, actorType, meleeAttackDuration);
+                attackInst.initialise(this, facing, actorType, meleeAttackDuration);
             } 
 
             yield return null;
@@ -126,7 +152,7 @@ public class Actor : MonoBehaviour
         actorState.StateActivate(this);
     }
 
-    private void setFacing(Vector2 moveDirection) {
+    private void setFacing(UnityEngine.Vector2 moveDirection) {
         if(Mathf.Abs(moveDirection.y) > Mathf.Abs(moveDirection.x)) {
             // One of the verticals
             if(moveDirection.y >= 0f) {

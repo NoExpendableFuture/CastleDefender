@@ -12,8 +12,11 @@ public class MeleeAttack : MonoBehaviour
     protected Quaternion currentRotation;
 
     public ActorType attackerType;
+    public Actor attacker;
 
     public float physicalDamage = 1f;
+    public float knockbackDamage = 2f;
+    public float knockbackDuration = 1f;
 
     // Update is called once per frame
     void Update()
@@ -21,8 +24,10 @@ public class MeleeAttack : MonoBehaviour
         elapsedTime += Time.deltaTime;
     }
 
-    public virtual void initialise(ActorFacing facing, ActorType attackerType, float timeToDespawn) {
+    public virtual void initialise(Actor attacker, ActorFacing facing, ActorType attackerType, float timeToDespawn) {
+        this.attacker = attacker;
         this.attackerType = attackerType;
+
         float playerRotation = 0f;
         if(facing == ActorFacing.TOP) {
             playerRotation = 0f;
@@ -65,6 +70,14 @@ public class MeleeAttack : MonoBehaviour
 
     public float getPhysicalDamage() {
         return physicalDamage;
+    }
+
+    public float getKnockBackDamage() {
+        return knockbackDamage;
+    }
+    
+    public float getKnockBackDuration() {
+        return knockbackDuration;
     }
 }
 

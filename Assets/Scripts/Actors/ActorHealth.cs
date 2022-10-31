@@ -14,9 +14,13 @@ public class ActorHealth : MonoBehaviour {
     public bool damagedByEnemy = true;
 
     public bool physicalDamageImmune = false;
+    public bool knockbackDamageImmune = false;
+
+    private Actor ac;
 
     void Start() {
         health = maxHealth;
+        ac = GetComponent<Actor>();
     }
 
     void Update() {
@@ -63,27 +67,49 @@ public class ActorHealth : MonoBehaviour {
     }
 
     private void applyMeleeAttackDamage(MeleeAttack meleeAttack) {
-        applyPhysicalDamage(meleeAttack);
-        invincibilityFramesActive = true;
-        invincibilityTimeElapsed = 0f;
-        if (health <= 0f) {
-            GetComponent<Actor>().Kill();
+        
+        bool physicalDamageApplied = applyPhysicalDamage(meleeAttack);
+        bool knockbackDamageApplied = applyKnockbackDamage(meleeAttack);
+        
+        if(physicalDamageApplied || knockbackDamageApplied) {
+            
+            invincibilityFramesActive = true;
+            invincibilityTimeElapsed = 0f;
+
+            if (health <= 0f) {
+                GetComponent<Actor>().Kill();
+            }
         }
     }
 
-    private void applyPhysicalDamage(Hazard hazard) {
+    private bool applyPhysicalDamage(Hazard hazard) {
         if(hazard.getPhysicalDamage() > 0f && !physicalDamageImmune) {
             // TODO: Animate the damage!
             health -= hazard.getPhysicalDamage();
             UnityEngine.Debug.Log("OW! Entered hazard");
+            return true;
         }
+        return false;
     }
     
-    private void applyPhysicalDamage(MeleeAttack meleeAttack) {
+    private bool applyPhysicalDamage(MeleeAttack meleeAttack) {
         if(meleeAttack.getPhysicalDamage() > 0f && !physicalDamageImmune) {
             // TODO: Animate the damage!
             health -= meleeAttack.getPhysicalDamage();
             UnityEngine.Debug.Log("OW! Hit by attack " + meleeAttack.name);
+            return true;
         }
+        return false;    
+    }
+    
+    private bool applyKnockbackDamage(MeleeAttack meleeAttack) {
+        if(meleeAttack.getKnockBackDamage() > 0f && !knockbackDamageImmune) {
+            // TODO: Animate the damage!
+            Vector2 knockbackDirectionAndForce = (transform.position - meleeAttack.attacker.transform.position) * meleeAttack.getKnockBackDamage();
+            ac.StartKnockback(knockbackDirectionAndForce, meleeAttack.getKnockBackDuration());
+            // UnityEngine.Debug.Log("OW! Knocked back by " + meleeAttack.name);
+            return true;
+        }
+        return false;
     }
 }

@@ -99,8 +99,14 @@ And of course graphics and sound for all of the above :/
 
 Timetable
 
+Wednesday 2 Nov - Polish Round 1
+
 -------------------------------------------------------------------------
-Tuesday 1 Nov - Animation - round 1
+
+Sound!
+	
+-------------------------------------------------------------------------
+Tuesday 1 Nov - Animation
 
 Any overflow from previous days goes here
 
@@ -130,6 +136,11 @@ Orb
 -------------------------------------------------------------------------
 Monday 31 Oct - Add stuff!
 
+Knockback and multiple-hit to kill phantoms: done
+
+Player "Sword Overcharge":
+	Maybe also change player sword so it only deals physical damage when "Charged" and after hitting something player can't use it to destroy enemies for a while (or just reduced damage), so they can bat them away but not remove them entirely... should make for larger, scarier hordes
+
 Skellies
 
 Demon-fire
@@ -138,8 +149,6 @@ Wall/Floor graphics
 	
 UI
 	- Health display with hearts: not started
-	
-Sound!
 	
 -------------------------------------------------------------------------
 Sunday 30 Oct - less work done than hoped :(

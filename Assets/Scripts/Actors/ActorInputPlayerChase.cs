@@ -27,9 +27,11 @@ public class ActorInputPlayerChase : MonoBehaviour, ActorInput
     }
 
     public bool isDoMeleeAttack() {
-        Vector3 direction = target.transform.position - this.transform.position;
-        if(new Vector2(direction.x, direction.y).magnitude < 1.75f) {
-            return true;
+        if(target != null){
+            Vector3 direction = target.transform.position - this.transform.position;
+            if(new Vector2(direction.x, direction.y).magnitude < 1.75f) {
+                return true;
+            }
         }
         return false; 
     }

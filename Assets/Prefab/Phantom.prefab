@@ -150,11 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3ec2a393a4bca4f8a16f9f2e881c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 2
   invincibilityDuration: 0.75
   damagedByPlayer: 1
   damagedByEnemy: 0
   physicalDamageImmune: 0
+  knockbackDamageImmune: 0
 --- !u!114 &4065292156469741742
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,8 +21,10 @@ public enum ActorStates {
     WALK,
     INACTIVE,
     MELEE,
-    DEAD
+    DEAD,
+    KNOCKEDBACK
 }
+
 public static class ActorStateName
 {
     public static String IDLE { get { return "Idle";} } 
@@ -30,5 +32,6 @@ public static class ActorStateName
     public static String INACTIVE { get { return "Inactive";} } 
     public static String MELEE { get { return "Melee";} } 
     public static String DEAD { get { return "Dead";} } 
+    public static String KNOCKEDBACK { get { return "Knocked back";} } 
 }
 

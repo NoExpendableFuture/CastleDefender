@@ -16,7 +16,9 @@ public class ActorStateFactory
         case ActorStates.MELEE:
             return new ActorStateMelee();
         case ActorStates.DEAD:
-            return new ActorStateDead();            
+            return new ActorStateDead();        
+        case ActorStates.KNOCKEDBACK:
+            return new ActorStateKnockedBack();           
         default: 
             return new ActorStateIdle();
         }

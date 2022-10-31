@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0128cdc9111874183703d6e3eded4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackerType: 0
+  attacker: {fileID: 0}
+  physicalDamage: 1
+  knockbackDamage: 8
+  knockbackDuration: 0.75
 --- !u!61 &5928897159383958226
 BoxCollider2D:
   m_ObjectHideFlags: 0
