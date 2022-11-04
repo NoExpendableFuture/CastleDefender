@@ -12,7 +12,6 @@ public class ActorInputPlayer : MonoBehaviour, ActorInput
         change.y = Input.GetAxisRaw("Vertical");
 
         // TODO: change to binary on/off movement? try like this first
-        Debug.Log(change);
 
         return change;
     }

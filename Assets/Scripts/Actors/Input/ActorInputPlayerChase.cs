@@ -18,12 +18,16 @@ public class ActorInputPlayerChase : MonoBehaviour, ActorInput
     }
 
     public Vector2 getMoveDirection () {
-        Vector3 direction = target.transform.position - this.transform.position;
-        if(new Vector2(direction.x, direction.y).magnitude < 1f) {
+        if (target != null) {
+            Vector3 direction = target.transform.position - this.transform.position;
+            if(new Vector2(direction.x, direction.y).magnitude < 1f) {
+                return Vector2.zero;
+            }
+            Vector2 change = direction.normalized;
+            return change;
+        } else {
             return Vector2.zero;
         }
-        Vector2 change = direction.normalized;
-        return change;
     }
 
     public bool isDoMeleeAttack() {

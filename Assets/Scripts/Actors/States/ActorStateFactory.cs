@@ -1,3 +1,5 @@
+using System;
+
 public class ActorStateFactory
 {
     public ActorStateFactory() {
@@ -15,12 +17,14 @@ public class ActorStateFactory
             return new ActorStateInactive();
         case ActorStates.MELEE:
             return new ActorStateMelee();
+        case ActorStates.MELEE_WINDUP:
+            return new ActorStateMeleeWindUp();
         case ActorStates.DEAD:
             return new ActorStateDead();        
         case ActorStates.KNOCKEDBACK:
             return new ActorStateKnockedBack();           
         default: 
-            return new ActorStateIdle();
+            throw new ArgumentOutOfRangeException("Unknown actor state " + toBuild);
         }
     }
 }

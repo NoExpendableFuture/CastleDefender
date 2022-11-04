@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Actors\States\ActorStateInactive.cs" />
      <Compile Include="Assets\Scripts\Actors\States\ActorStateKnockedBack.cs" />
      <Compile Include="Assets\Scripts\Actors\States\ActorStateMelee.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateMeleeWindUp.cs" />
      <Compile Include="Assets\Scripts\Actors\States\ActorStateWalk.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Hazard.cs" />

@@ -25,7 +25,8 @@ public class CameraControl : MonoBehaviour
 
     void LateUpdate()
     {
-        if (transform.position != target.position)
+
+        if (target != null && transform.position != target.position)
         {
             targetPosition2D = new Vector3(target.position.x, target.position.y, transform.position.z);
             ClampCameraToLevelBounds(true);

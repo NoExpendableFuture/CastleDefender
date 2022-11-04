@@ -9,12 +9,18 @@ public class Actor : MonoBehaviour
     protected ActorInput input;
     protected Rigidbody2D rb;
     protected ActorState actorState;
+    public ActorState ActorState {
+        get {return actorState;}
+    }
     protected ActorStateFactory actorStateFactory = new ActorStateFactory();
     public ActorType actorType;
     
     private ActorAnimator actorAnimator;
 
     protected ActorFacing facing = ActorFacing.TOP;
+    public ActorFacing Facing {
+        get {return facing;}
+    }
 
     public float meleeAttackDuration = 1f;
 
@@ -94,12 +100,8 @@ public class Actor : MonoBehaviour
             // Commence attack
             actorState.StateDeactivate();
 
-            actorState = actorStateFactory.Build(ActorStates.MELEE);
-            actorState.StateActivate(this, () => {
-                meleeAttackOnCoolDown = true;
-                meleeAttackCoolDownTimeElapsed = 0f;
-                this.CallbackStateDeactivating();
-            }, meleeAttackDuration);
+            actorState = actorStateFactory.Build(ActorStates.MELEE_WINDUP);
+            actorState.StateActivate(this);
 
             meleeAttackWindUpTimeElapsed = 0f;
             meleeAttackWindUpComplete = false;
@@ -128,7 +130,15 @@ public class Actor : MonoBehaviour
     {
         while(!meleeAttackWindUpComplete) {
             meleeAttackWindUpTimeElapsed += Time.deltaTime;
-            if(meleeAttackWindUpTimeElapsed >= meleeAttackWindUpDuration && actorState.StateName() == ActorStateName.MELEE){
+            if(meleeAttackWindUpTimeElapsed >= meleeAttackWindUpDuration && actorState.StateName() == ActorStateName.MELEE_WINDUP){
+                actorState.StateDeactivate();
+                actorState = actorStateFactory.Build(ActorStates.MELEE);
+                actorState.StateActivate(this, () => {
+                    meleeAttackOnCoolDown = true;
+                    meleeAttackCoolDownTimeElapsed = 0f;
+                    this.CallbackStateDeactivating();
+                }, meleeAttackDuration);
+                
                 meleeAttackWindUpComplete = true;                
                 MeleeAttack attackInst = Instantiate(meleeAttack, transform.position, Quaternion.identity);
                 attackInst.initialise(this, facing, actorType, meleeAttackDuration);
@@ -177,7 +187,6 @@ public class Actor : MonoBehaviour
                 facing = ActorFacing.LEFT;
             }
         }
-        actorAnimator.Facing = facing;
     }
 }
 

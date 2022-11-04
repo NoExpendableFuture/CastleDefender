@@ -125,6 +125,8 @@ Orb
 Player "Sword Overcharge":
 	Maybe also change player sword so it deals much more physical damage when "Charged" and after hitting something player can't use it to destroy enemies for a while (or just reduced damage), so they can bat them away but not remove them entirely... should make for larger, scarier hordes
 
+Exit lighting - make sprite additive with layers below (or just make some sprite with it pre-baked on floor texture)
+	
 Skellies
 
 Demon-fire
@@ -134,6 +136,23 @@ Wall/Floor graphics
 UI
 	- Health display with hearts: not started
 
+-------------------------------------------------------------------------
+Saturday 5 Nov - Actor animation continued\
+
+Think it's fair to say animating this stuff is not the bit I look forward to :/
+
+Player
+	- facing animation!
+	- attack animation
+	- hurt/kill/invincibility frames animation
+	- Sword animation - more oomph at the end?
+
+Phantom
+	- Facing animations
+	- movement animation
+	- death animation
+	- attack animation
+	
 -------------------------------------------------------------------------
 Friday 4 Nov - Animation
 

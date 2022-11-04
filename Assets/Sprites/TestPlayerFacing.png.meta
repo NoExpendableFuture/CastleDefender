@@ -14,6 +14,42 @@ TextureImporter:
   - first:
       213: -6489172517758061732
     second: TestPlayerFacing_3
+  - first:
+      213: -2659461649031773746
+    second: TestPlayerFacing_4
+  - first:
+      213: -6313807639450625537
+    second: TestPlayerFacing_5
+  - first:
+      213: 126335045070327308
+    second: TestPlayerFacing_6
+  - first:
+      213: -5456108451350382459
+    second: TestPlayerFacing_7
+  - first:
+      213: 3534205526077569494
+    second: TestPlayerFacing_8
+  - first:
+      213: 4959423910352730163
+    second: TestPlayerFacing_9
+  - first:
+      213: 4150289135876044203
+    second: TestPlayerFacing_10
+  - first:
+      213: 4005745754861800382
+    second: TestPlayerFacing_11
+  - first:
+      213: 3274993551463360080
+    second: TestPlayerFacing_12
+  - first:
+      213: -5373936822560163433
+    second: TestPlayerFacing_13
+  - first:
+      213: -1552739610862320757
+    second: TestPlayerFacing_14
+  - first:
+      213: -336360233919165720
+    second: TestPlayerFacing_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,7 +139,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -124,7 +160,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -144,8 +180,8 @@ TextureImporter:
       name: TestPlayerFacing_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -165,8 +201,8 @@ TextureImporter:
       name: TestPlayerFacing_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 96
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -178,6 +214,258 @@ TextureImporter:
       bones: []
       spriteID: c53bdc8e9f3d1f5a0800000000000000
       internalID: -6489172517758061732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1cfab78b1b71bd0800000000000000
+      internalID: -2659461649031773746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9d5666769d068a0800000000000000
+      internalID: -6313807639450625537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e891cdd05d0c100800000000000000
+      internalID: 126335045070327308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588f04d65420844b0800000000000000
+      internalID: -5456108451350382459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9731173350c0130800000000000000
+      internalID: 3534205526077569494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338372335c963d440800000000000000
+      internalID: 4959423910352730163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5fd0bdaf9c89930800000000000000
+      internalID: 4150289135876044203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb011b6a84479730800000000000000
+      internalID: 4005745754861800382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0562bac884d137d20800000000000000
+      internalID: 3274993551463360080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799f8e5aee0fb65b0800000000000000
+      internalID: -5373936822560163433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b838fd9fc8f837ae0800000000000000
+      internalID: -1552739610862320757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestPlayerFacing_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea4eac3622055bf0800000000000000
+      internalID: -336360233919165720
       vertices: []
       indices: 
       edges: []
