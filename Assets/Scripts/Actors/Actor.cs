@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +11,8 @@ public class Actor : MonoBehaviour
     protected ActorState actorState;
     protected ActorStateFactory actorStateFactory = new ActorStateFactory();
     public ActorType actorType;
+    
+    private ActorAnimator actorAnimator;
 
     protected ActorFacing facing = ActorFacing.TOP;
 
@@ -32,17 +33,22 @@ public class Actor : MonoBehaviour
 
     private Vector2 knockbackForce;
 
+    private Vector2 targetPos = Vector2.zero;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<ActorInput>();
+        actorAnimator = GetComponent<ActorAnimator>();
         actorState = new ActorStateIdle();
     }
 
-    void Update()
-    {
+    void Update() {
         DoMelee();
+    }
 
+    void FixedUpdate()
+    {
         Vector2 direction = input.getMoveDirection().normalized;
         
         if(actorState.AllowMove()) {
@@ -57,20 +63,23 @@ public class Actor : MonoBehaviour
                actorState.StateActivate(this);
             }
 
-            float targetX = transform.position.x + direction.x * walkSpeed * Time.deltaTime;
-            float targetY = transform.position.y + direction.y * walkSpeed * Time.deltaTime;
-            
-            Vector3 targetPos = new Vector3(targetX, targetY, transform.position.z);
+            float targetX = transform.position.x + direction.x * walkSpeed * Time.fixedDeltaTime;
+            float targetY = transform.position.y + direction.y * walkSpeed * Time.fixedDeltaTime;
+            targetPos = new Vector3(targetX, targetY, transform.position.z);
             rb.MovePosition(targetPos);
         }
 
         if(actorState.StateName() == ActorStateName.KNOCKEDBACK) {            
-            float targetX = transform.position.x + knockbackForce.x * Time.deltaTime;
-            float targetY = transform.position.y + knockbackForce.y * Time.deltaTime;            
-            Vector3 targetPos = new Vector3(targetX, targetY, transform.position.z);
+            float targetX = transform.position.x + knockbackForce.x * Time.fixedDeltaTime;
+            float targetY = transform.position.y + knockbackForce.y * Time.fixedDeltaTime;   
+            targetPos = new Vector3(targetX, targetY, transform.position.z);
             rb.MovePosition(targetPos);
         }
     }
+
+    // void LateUpdate() {
+    //     rb.MovePosition(targetPos);
+    // }
 
     protected virtual void DoMelee() { 
         /** Basic method only - Override this in subclasses*/
@@ -168,7 +177,7 @@ public class Actor : MonoBehaviour
                 facing = ActorFacing.LEFT;
             }
         }
-        // TODO: Update facing animation!
+        actorAnimator.Facing = facing;
     }
 }
 

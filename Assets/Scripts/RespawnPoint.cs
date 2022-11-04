@@ -10,7 +10,7 @@ public class RespawnPoint : MonoBehaviour
     public int maxActiveSpawns = 3;
     public int activeSpawns = 0;
     public float spawnCooldownDuration = 2f;   
-    public float spawnCooldownTimeElapsed = 2f;
+    private float spawnCooldownTimeElapsed = 0f;
     
     // private bool active = true;
 

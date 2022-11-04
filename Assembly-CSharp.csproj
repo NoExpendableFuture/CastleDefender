@@ -36,20 +36,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ActorAnimator.cs" />
      <Compile Include="Assets\Scripts\Actors\Actor.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorHealth.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorInput.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorInputPlayer.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorInputPlayerChase.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorState.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateDead.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateFactory.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateIdle.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateInactive.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateKnockedBack.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateMelee.cs" />
-     <Compile Include="Assets\Scripts\Actors\ActorStateWalk.cs" />
+     <Compile Include="Assets\Scripts\Actors\Input\ActorInput.cs" />
+     <Compile Include="Assets\Scripts\Actors\Input\ActorInputPlayer.cs" />
+     <Compile Include="Assets\Scripts\Actors\Input\ActorInputPlayerChase.cs" />
      <Compile Include="Assets\Scripts\Actors\Player.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorState.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateDead.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateFactory.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateIdle.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateInactive.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateKnockedBack.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateMelee.cs" />
+     <Compile Include="Assets\Scripts\Actors\States\ActorStateWalk.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Hazard.cs" />
      <Compile Include="Assets\Scripts\LevelEndPopUp.cs" />

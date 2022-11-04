@@ -129,7 +129,7 @@ MonoBehaviour:
   attackerType: 0
   attacker: {fileID: 0}
   physicalDamage: 1
-  knockbackDamage: 2
+  knockbackDamage: 0.2
   knockbackDuration: 1
 --- !u!61 &5197879840747135997
 BoxCollider2D:

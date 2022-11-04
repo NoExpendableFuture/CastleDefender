@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -193,6 +198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Respawn Point (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
 --- !u!1001 &115203396
@@ -207,6 +217,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -266,6 +281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Point (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
@@ -774,6 +794,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -833,6 +858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Point (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
@@ -929,6 +959,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -988,6 +1023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Point (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
@@ -1405,6 +1445,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -1464,6 +1509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Point (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
@@ -1756,7 +1806,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.35
+  m_fontSize: 24.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2261,6 +2311,8 @@ GameObject:
   - component: {fileID: 1367024611}
   - component: {fileID: 1367024610}
   - component: {fileID: 1367024612}
+  - component: {fileID: 1367024613}
+  - component: {fileID: 1367024614}
   m_Layer: 0
   m_Name: _Player
   m_TagString: Player
@@ -2355,7 +2407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50875754e0626bd4eba830d77e2db94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 75
+  walkSpeed: 7.5
   actorType: 0
   meleeAttackDuration: 0.15
   meleeAttackWindUpDuration: 1
@@ -2384,6 +2436,37 @@ MonoBehaviour:
   damagedByEnemy: 1
   physicalDamageImmune: 0
   knockbackDamageImmune: 1
+--- !u!114 &1367024613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367024606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1ea6adb31a73d4faabede8fad44925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1367024614
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367024606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e32f2de336fb54047affb811e536c79f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1440520565
 GameObject:
   m_ObjectHideFlags: 0
@@ -24446,7 +24529,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.1
+  m_fontSize: 49.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -24589,6 +24672,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -24648,6 +24736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Point (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
@@ -25053,7 +25146,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.65
+  m_fontSize: 37.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25287,7 +25380,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.35
+  m_fontSize: 24.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25497,6 +25590,11 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
+    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder
@@ -25556,6 +25654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Respawn Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 5098074606639738655, guid: 258cd69cf6b7e8840beb305107463f08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258cd69cf6b7e8840beb305107463f08, type: 3}
