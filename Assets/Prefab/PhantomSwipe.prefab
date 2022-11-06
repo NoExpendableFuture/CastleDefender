@@ -70,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: a6eed6984034cde4a86d3c05a5596e5d, type: 3}
+  m_Sprite: {fileID: 1060164537678266559, guid: a6eed6984034cde4a86d3c05a5596e5d,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,6 +93,7 @@ GameObject:
   - component: {fileID: 5197879840747135995}
   - component: {fileID: 5197879840747135994}
   - component: {fileID: 5197879840747135997}
+  - component: {fileID: 464433177}
   m_Layer: 0
   m_Name: PhantomSwipe
   m_TagString: Untagged
@@ -157,3 +159,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!95 &464433177
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197879840747135992}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 893e6bd77e8c97f47846b4c7163c1456, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

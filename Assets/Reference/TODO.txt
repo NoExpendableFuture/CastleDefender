@@ -99,26 +99,21 @@ And of course graphics and sound for all of the above :/
 
 Timetable
 
-Saturday 5 Nov - Expand and Polish Round 1
+----------------------------
+Overflow
 
 Any overflow from previous days goes here
 
 Sound!
-	
-Phantom
-	- Facing animations
-	- movement animation
-	- death animation
-	- attack animation
-	
+		
 End door 
 	- improve graphix
 	- fade out animation
 
 Orb
 	- Change graphic to look more like "light trapped inside a dark container"
-	- Floating effect: not started
-	- Glow effect with "pulsing": not started
+	- Floating effect: added, could improve further
+	- Glow effect with "pulsing": added, could improve further
 	- Shatter effect across screen: not started
 	- Zoom to door opening then back after shatter: not started
 
@@ -136,15 +131,20 @@ Wall/Floor graphics
 UI
 	- Health display with hearts: not started
 
+----------------------------
+Sunday 6 Nov - Animation continued
+	
 -------------------------------------------------------------------------
-Saturday 5 Nov - Actor animation continued\
+Saturday 5 Nov - Actor animation continued
 
 Think it's fair to say animating this stuff is not the bit I look forward to :/
 
 Player
-	- facing animation!
+	- facing animation
 	- attack animation
 	- hurt/kill/invincibility frames animation
+	- ded animation
+	- hurt animation
 	- Sword animation - more oomph at the end?
 
 Phantom
@@ -152,6 +152,7 @@ Phantom
 	- movement animation
 	- death animation
 	- attack animation
+	- swipe animation: done
 	
 -------------------------------------------------------------------------
 Friday 4 Nov - Animation

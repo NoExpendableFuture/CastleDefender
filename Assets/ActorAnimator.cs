@@ -63,7 +63,7 @@ public class ActorAnimator : MonoBehaviour
         animName += actor.ActorState.StateName();
 
         if(currentAnimation != animName) {
-            Debug.Log(gameObject.name + ": New animation state " + animName);
+            // Debug.Log(gameObject.name + ": New animation state " + animName);
             currentAnimation = animName;
             animator.Play(animName);
         }

@@ -37,6 +37,8 @@ public class Actor : MonoBehaviour
 
     public RespawnPoint spawnFromPoint;
 
+    public bool destroyAfterKill = true;
+
     private Vector2 knockbackForce;
 
     private Vector2 targetPos = Vector2.zero;
@@ -155,8 +157,10 @@ public class Actor : MonoBehaviour
         if(spawnFromPoint != null) {
             spawnFromPoint.SignalSpawnedActorDestroyed(this);
         }
-        // TODO: Show ded animation, just deleting object for now
-        Destroy(gameObject);
+        if(destroyAfterKill){
+            // TODO: Set it up so this only happens after the death animation plays out...
+            Destroy(gameObject);
+        }
     }
 
     public void SetInactive() {

@@ -132,13 +132,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1.5
   actorType: 1
-  meleeAttackDuration: 1
+  meleeAttackDuration: 0.33
   meleeAttackWindUpDuration: 0.25
   meleeAttackCoolDownDuration: 0.5
   meleeAttack: {fileID: 5197879840747135994, guid: e74707dec26ee6c4580ad9edd752c677,
     type: 3}
   hasMeleeAttack: 1
   spawnFromPoint: {fileID: 0}
+  destroyAfterKill: 1
 --- !u!114 &4065292156469741740
 MonoBehaviour:
   m_ObjectHideFlags: 0
