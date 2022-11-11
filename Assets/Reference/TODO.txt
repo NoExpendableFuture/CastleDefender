@@ -100,7 +100,7 @@ And of course graphics and sound for all of the above :/
 Timetable
 
 ----------------------------
-Overflow
+Overflow/TODO list
 
 Any overflow from previous days goes here
 
@@ -130,12 +130,9 @@ Wall/Floor graphics
 	
 UI
 	- Health display with hearts: not started
-
-----------------------------
-Sunday 6 Nov - Animation continued
 	
 -------------------------------------------------------------------------
-Saturday 5 Nov - Actor animation continued
+Saturday 5 Nov (and on for a while) - Actor animation continued
 
 Think it's fair to say animating this stuff is not the bit I look forward to :/
 
