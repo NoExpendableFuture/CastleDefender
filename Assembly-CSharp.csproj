@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\ActorAnimator.cs" />
+     <Compile Include="Assets\Block.cs" />
      <Compile Include="Assets\Scripts\Actors\Actor.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorHealth.cs" />
      <Compile Include="Assets\Scripts\Actors\Input\ActorInput.cs" />

@@ -104,6 +104,11 @@ Overflow/TODO list
 
 Any overflow from previous days goes here
 
+Block pushing/puzzles: in progress
+	Determining if push happening: done
+	Block movement: done
+	Player push state: not started
+
 Sound!
 		
 End door 
@@ -111,7 +116,7 @@ End door
 	- fade out animation
 
 Orb
-	- Change graphic to look more like "light trapped inside a dark container"
+	- Change graphic to look more like "light trapped inside a dark container": done
 	- Floating effect: added, could improve further
 	- Glow effect with "pulsing": added, could improve further
 	- Shatter effect across screen: not started
@@ -127,6 +132,7 @@ Skellies
 Demon-fire
 
 Wall/Floor graphics
+	
 	
 UI
 	- Health display with hearts: not started

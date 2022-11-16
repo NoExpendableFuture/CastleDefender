@@ -43,6 +43,9 @@ public class Actor : MonoBehaviour
 
     private Vector2 targetPos = Vector2.zero;
 
+    public Vector2 MovingDirection {get {return direction;}}
+    Vector2 direction = Vector2.zero;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,7 +60,7 @@ public class Actor : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 direction = input.getMoveDirection().normalized;
+        direction = input.getMoveDirection().normalized;
         
         if(actorState.AllowMove()) {
             if(direction.magnitude > 0f) {
