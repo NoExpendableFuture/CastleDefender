@@ -107,6 +107,7 @@ Any overflow from previous days goes here
 Block pushing/puzzles: in progress
 	Determining if push happening: done
 	Block movement: done
+	Bug fix: Prevent block being pushed inside terrain...
 	Player push state: not started
 
 Sound!
@@ -132,8 +133,7 @@ Skellies
 Demon-fire
 
 Wall/Floor graphics
-	
-	
+
 UI
 	- Health display with hearts: not started
 	
