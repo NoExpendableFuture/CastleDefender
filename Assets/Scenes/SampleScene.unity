@@ -26311,11 +26311,6 @@ PrefabInstance:
       propertyPath: linkedOrb
       value: 
       objectReference: {fileID: 570468979}
-    - target: {fileID: 5098074606639738652, guid: 258cd69cf6b7e8840beb305107463f08,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5098074606639738653, guid: 258cd69cf6b7e8840beb305107463f08,
         type: 3}
       propertyPath: m_RootOrder

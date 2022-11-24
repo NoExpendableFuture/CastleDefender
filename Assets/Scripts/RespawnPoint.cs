@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnPoint : MonoBehaviour
+public class RespawnPoint : MonoBehaviour, Hazard
 {
     public Puzzle linkedOrb;
     public Actor spawnPrefab;
@@ -12,7 +12,8 @@ public class RespawnPoint : MonoBehaviour
     public float spawnCooldownDuration = 2f;   
     private float spawnCooldownTimeElapsed = 0f;
     
-    // private bool active = true;
+    private bool active = true;
+    public float physicalDamage = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,12 @@ public class RespawnPoint : MonoBehaviour
     void Update()
     {
         if(linkedOrb.PuzzleComplete()) {
-            Destroy(this);
-        } else {
+            active = false;
+            // TODO: Animate the portal turning off
+            // Destroy(this);
+        } 
+        
+        if (active){
             spawnCooldownTimeElapsed += Time.deltaTime;
             CheckSpawn();
         }
@@ -48,5 +53,27 @@ public class RespawnPoint : MonoBehaviour
 
     public void SignalSpawnedActorDestroyed(Actor destroyed) {
         activeSpawns--;
+    }
+
+    public bool isActiveHazard() {
+        return active;
+    }
+    
+    public float getPhysicalDamage() {
+        return physicalDamage;   
+    }
+    
+    public void OnTriggerEnter2D(Collider2D other) {
+        hurtPlayer(other);
+    }
+
+    public void OnTriggerStay2D(Collider2D other) {
+        hurtPlayer(other);
+    }
+
+    void hurtPlayer(Collider2D other) {
+        if(other.tag == "Player" && other.GetComponent<ActorHealth>() != null){
+            other.GetComponent<ActorHealth>().DamageWithHazard(this);
+        }
     }
 }

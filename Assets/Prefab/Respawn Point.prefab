@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5098074606639738653}
   - component: {fileID: 5098074606639738652}
+  - component: {fileID: 2722190634315097349}
   m_Layer: 0
   m_Name: Respawn Point
   m_TagString: Untagged
@@ -50,7 +51,33 @@ MonoBehaviour:
   maxActiveSpawns: 3
   activeSpawns: 0
   spawnCooldownDuration: 2
-  spawnCooldownTimeElapsed: 2
+  physicalDamage: 0.5
+--- !u!61 &2722190634315097349
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098074606639738655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.28}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.35}
+  m_EdgeRadius: 0
 --- !u!1 &5098074607594934654
 GameObject:
   m_ObjectHideFlags: 0
