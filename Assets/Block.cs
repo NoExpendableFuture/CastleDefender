@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,6 +46,22 @@ public class Block : MonoBehaviour
         pushSinceLastFrame = false;
     }
 
+    private bool willHitWall(Vector2 moveDirection) {
+        // TODO: Cast box toward the move direction, extending out from the edge of the box by size of the block
+        // Note: Assuming square block
+        // TODO: Set collision layer mask - don't want it blocked by enemies etc.
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(this.transform.position, new Vector2(width - 0.1f, height - 0.1f), 0f, moveDirection, Mathf.Max(width, height));
+        for (int i = 0; i < hits.Length; i++) {
+            if (hits[i].transform == this.transform) {
+                continue;
+            } else {
+                Debug.Log("Cannot push - hitting " + hits[i].transform.gameObject.name);
+                return true;
+            }
+        }
+        return false;        
+    }
+
     public void OnCollisionStay2D(Collision2D other) {
         Player player = other.gameObject.GetComponent<Player>();
         // TODO: Should be a push state, not walk
@@ -53,29 +70,36 @@ public class Block : MonoBehaviour
             pushSinceLastFrame = true;
             if(playerPushTime >= playerPushToMoveTime) 
             {
-                // TODO: Need one final check - will pushing it make this hit a wall/other block/thing that would stop it? If so, no move
                 Vector2 distToPlayer = this.transform.position - player.transform.position;
                 Debug.Log(distToPlayer);
                 if (player.Facing == ActorFacing.BOTTOM && distToPlayer.y < 0f && Mathf.Abs(distToPlayer.y) > Mathf.Abs(distToPlayer.x) ) {
-                    Debug.Log("Push down");
+                    // Debug.Log("Push down");
                     moveDirection = new Vector2(0, -1);
-                    moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
-                    moving = true;  
+                    if(!willHitWall(moveDirection)) {
+                        moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
+                        moving = true;  
+                    }
                 } else if (player.Facing == ActorFacing.TOP && distToPlayer.y > 0f && Mathf.Abs(distToPlayer.y) > Mathf.Abs(distToPlayer.x) ) {
-                    Debug.Log("Push Up");
+                    // Debug.Log("Push Up");
                     moveDirection = new Vector2(0, 1);
-                    moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
-                    moving = true;  
+                    if(!willHitWall(moveDirection)) {
+                        moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
+                        moving = true;  
+                    }   
                 } else if (player.Facing == ActorFacing.LEFT && distToPlayer.x < 0f && Mathf.Abs(distToPlayer.y) < Mathf.Abs(distToPlayer.x) ) {
-                    Debug.Log("Push Left");
+                    // Debug.Log("Push Left");
                     moveDirection = new Vector2(-1, 0);
-                    moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
-                    moving = true;  
+                    if(!willHitWall(moveDirection)) {
+                        moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
+                        moving = true;  
+                    }
                 } else if (player.Facing == ActorFacing.RIGHT && distToPlayer.x > 0f && Mathf.Abs(distToPlayer.y) < Mathf.Abs(distToPlayer.x) ) {
-                    Debug.Log("Push Right");
+                    // Debug.Log("Push Right");
                     moveDirection = new Vector2(1, 0);
-                    moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
-                    moving = true;          
+                    if(!willHitWall(moveDirection)) {
+                        moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
+                        moving = true;          
+                    }
                 }
                 playerPushTime = 0f;
             }

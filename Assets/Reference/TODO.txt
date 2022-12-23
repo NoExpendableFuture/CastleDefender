@@ -3,7 +3,8 @@ A LIGHT IN THE DARK (Working title)
 ----------------------------
 
 Project initial scope - create a game in a week (maybe two - do still have to do the day job, cook, wash etc :/)
-
+	- Sort of accomplished, albeit missing a lot of art assets :/
+	
 General idea - Zelda-ish game where the player avatar must fend off attacking enemies in a self contained level, and solve some (fairly simple) puzzles to get a special power orb that will activate, end the flow/respawning of enemies, then open level exit to complete the level
 
 Visual style... maybe a bit like Crypt of the Necrodancer? top down, but a little from the front?
@@ -108,6 +109,7 @@ Block pushing/puzzles: in progress
 	Determining if push happening: done
 	Block movement: done
 	Bug fix: Prevent block being pushed inside terrain...
+		- ADD COLLISION MASK! ALSO - LAYERS FOR OBJECTS!
 	Player push state: not started
 
 Sound!
