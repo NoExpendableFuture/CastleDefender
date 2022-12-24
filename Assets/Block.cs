@@ -30,7 +30,8 @@ public class Block : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(new Vector2(transform.position.x, transform.position.y) == moveTarget) {
+        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), moveTarget) < 0.075f) {
+            transform.position = moveTarget;
             moving = false;            
         }
         if (moving) {            
@@ -46,11 +47,12 @@ public class Block : MonoBehaviour
         pushSinceLastFrame = false;
     }
 
-    private bool willHitWall(Vector2 moveDirection) {
-        // TODO: Cast box toward the move direction, extending out from the edge of the box by size of the block
+    private bool willHitWall(Vector2 targetedMoveDirection) {
+        // Cast box toward the move direction, extending out from the edge of the box by size of the block
         // Note: Assuming square block
+        
         // TODO: Set collision layer mask - don't want it blocked by enemies etc.
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(this.transform.position, new Vector2(width - 0.1f, height - 0.1f), 0f, moveDirection, Mathf.Max(width, height));
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(this.transform.position, new Vector2(width - 0.1f, height - 0.1f), 0f, targetedMoveDirection, Mathf.Max(width, height));
         for (int i = 0; i < hits.Length; i++) {
             if (hits[i].transform == this.transform) {
                 continue;
