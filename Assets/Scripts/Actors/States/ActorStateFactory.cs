@@ -22,7 +22,9 @@ public class ActorStateFactory
         case ActorStates.DEAD:
             return new ActorStateDead();        
         case ActorStates.KNOCKEDBACK:
-            return new ActorStateKnockedBack();           
+            return new ActorStateKnockedBack();          
+        case ActorStates.PUSHING:
+            return new ActorStatePushing();          
         default: 
             throw new ArgumentOutOfRangeException("Unknown actor state " + toBuild);
         }

@@ -40,7 +40,7 @@ public class ActorAnimator : MonoBehaviour
         
         string animName = "";
         List<string> directionalAnimations = new List<string>
-            { ActorStateName.IDLE, ActorStateName.MELEE, ActorStateName.MELEE_WINDUP, ActorStateName.WALK };
+            { ActorStateName.IDLE, ActorStateName.MELEE, ActorStateName.MELEE_WINDUP, ActorStateName.WALK, ActorStateName.PUSHING };
 
         if(directionalAnimations.Contains(actor.ActorState.StateName())) {
             switch(actor.Facing) {

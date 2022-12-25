@@ -11,6 +11,7 @@ public class Block : MonoBehaviour
     private Vector2 moveTarget;
     private Vector2 moveDirection;
 
+    public bool Moving {get{return moving;}}
     private bool moving = false;
     private float height;
     private float width;
@@ -66,20 +67,19 @@ public class Block : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D other) {
         Player player = other.gameObject.GetComponent<Player>();
-        // TODO: Should be a push state, not walk
-        if (pushable && !moving && player != null && player.ActorState.StateName() == ActorStateName.WALK) {
+        if (pushable && !moving && player != null && (player.ActorState.StateName() == ActorStateName.WALK || player.ActorState.StateName() == ActorStateName.PUSHING)) {
             playerPushTime += Time.deltaTime;
             pushSinceLastFrame = true;
             if(playerPushTime >= playerPushToMoveTime) 
             {
                 Vector2 distToPlayer = this.transform.position - player.transform.position;
-                Debug.Log(distToPlayer);
+                // Debug.Log(distToPlayer);
                 if (player.Facing == ActorFacing.BOTTOM && distToPlayer.y < 0f && Mathf.Abs(distToPlayer.y) > Mathf.Abs(distToPlayer.x) ) {
                     // Debug.Log("Push down");
                     moveDirection = new Vector2(0, -1);
                     if(!willHitWall(moveDirection)) {
                         moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
-                        moving = true;  
+                        moving = true;                   
                     }
                 } else if (player.Facing == ActorFacing.TOP && distToPlayer.y > 0f && Mathf.Abs(distToPlayer.y) > Mathf.Abs(distToPlayer.x) ) {
                     // Debug.Log("Push Up");
@@ -100,7 +100,7 @@ public class Block : MonoBehaviour
                     moveDirection = new Vector2(1, 0);
                     if(!willHitWall(moveDirection)) {
                         moveTarget = new Vector2(transform.position.x, transform.position.y) + moveDirection;
-                        moving = true;          
+                        moving = true;     
                     }
                 }
                 playerPushTime = 0f;

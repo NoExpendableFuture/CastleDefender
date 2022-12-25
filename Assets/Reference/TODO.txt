@@ -108,9 +108,9 @@ Any overflow from previous days goes here
 Block pushing/puzzles: in progress
 	Determining if push happening: done
 	Block movement: done
-	Bug fix: Prevent block being pushed inside terrain...
-		- ADD COLLISION MASK! ALSO - LAYERS FOR OBJECTS!
-	Player push state: not started
+	Bug fix: Prevent block being pushed inside terrain...: done
+	Player push state: in progress
+	- ADD COLLISION MASK FOR BLOCK! ALSO - LAYERS FOR OBJECTS!
 
 Sound!
 		

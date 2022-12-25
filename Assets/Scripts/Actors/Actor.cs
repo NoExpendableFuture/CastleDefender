@@ -46,6 +46,12 @@ public class Actor : MonoBehaviour
     public Vector2 MovingDirection {get {return direction;}}
     Vector2 direction = Vector2.zero;
 
+    public bool IsPushingBlock {get {return isPushingBlock;}}
+    protected bool isPushingBlock = false;
+
+    protected float pushingTime = 0.05f;
+    protected float pushingTimeElapsed = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,10 +70,16 @@ public class Actor : MonoBehaviour
         
         if(actorState.AllowMove()) {
             if(direction.magnitude > 0f) {
-               actorState.StateDeactivate();
-               actorState = actorStateFactory.Build(ActorStates.WALK);
-               actorState.StateActivate(this);
-               setFacing(direction);
+                if(isPushingBlock && actorState.StateName() != ActorStateName.PUSHING) {
+                    actorState.StateDeactivate();
+                    actorState = actorStateFactory.Build(ActorStates.PUSHING);
+                    actorState.StateActivate(this);
+                } else if(!isPushingBlock && actorState.StateName() != ActorStateName.WALK) {
+                    actorState.StateDeactivate();
+                    actorState = actorStateFactory.Build(ActorStates.WALK);
+                    actorState.StateActivate(this);
+                }
+                setFacing(direction);
             } else {
                actorState.StateDeactivate();
                actorState = actorStateFactory.Build(ActorStates.IDLE);
@@ -86,6 +98,13 @@ public class Actor : MonoBehaviour
             targetPos = new Vector3(targetX, targetY, transform.position.z);
             rb.MovePosition(targetPos);
         }
+        if(isPushingBlock) {
+            pushingTimeElapsed += Time.fixedDeltaTime;
+            if(pushingTimeElapsed >= pushingTime) {
+                isPushingBlock = false;
+            }
+        }
+        
     }
 
     // void LateUpdate() {
