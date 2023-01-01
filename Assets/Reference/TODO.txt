@@ -100,6 +100,8 @@ And of course graphics and sound for all of the above :/
 
 Timetable
 
+Might be time to make a new timetable with remaining items. Getting cluttered in here.
+
 ----------------------------
 Overflow/TODO list
 
@@ -109,7 +111,7 @@ Block pushing/puzzles: in progress
 	Determining if push happening: done
 	Block movement: done
 	Bug fix: Prevent block being pushed inside terrain...: done
-	Player push state: in progress
+	Player push state: done
 	- ADD COLLISION MASK FOR BLOCK! ALSO - LAYERS FOR OBJECTS!
 
 Sound!
