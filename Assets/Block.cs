@@ -21,6 +21,8 @@ public class Block : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public LayerMask collidesWithMask;
+
     void Start()
     {
         BoxCollider2D bc2d = GetComponent<BoxCollider2D>();
@@ -52,8 +54,7 @@ public class Block : MonoBehaviour
         // Cast box toward the move direction, extending out from the edge of the box by size of the block
         // Note: Assuming square block
         
-        // TODO: Set collision layer mask - don't want it blocked by enemies etc.
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(this.transform.position, new Vector2(width - 0.1f, height - 0.1f), 0f, targetedMoveDirection, Mathf.Max(width, height));
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(this.transform.position, new Vector2(width - 0.1f, height - 0.1f), 0f, targetedMoveDirection, Mathf.Max(width, height), collidesWithMask);
         for (int i = 0; i < hits.Length; i++) {
             if (hits[i].transform == this.transform) {
                 continue;

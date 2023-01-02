@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5197879839607451504}
   - component: {fileID: 5197879839607451507}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5197879840747135994}
   - component: {fileID: 5197879840747135997}
   - component: {fileID: 464433177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PhantomSwipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

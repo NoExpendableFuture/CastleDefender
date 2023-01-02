@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5098074606639738653}
   - component: {fileID: 5098074606639738652}
   - component: {fileID: 2722190634315097349}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Respawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5098074607594934655}
   - component: {fileID: 5098074607594934652}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

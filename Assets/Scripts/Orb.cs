@@ -20,5 +20,5 @@ public class Orb : Puzzle
 
     public override bool PuzzleComplete() {
         return orbDestroyed;
-    }
+    }    
 }

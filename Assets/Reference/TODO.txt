@@ -107,12 +107,11 @@ Overflow/TODO list
 
 Any overflow from previous days goes here
 
-Block pushing/puzzles: in progress
+Block pushing/puzzles: done :)
 	Determining if push happening: done
 	Block movement: done
 	Bug fix: Prevent block being pushed inside terrain...: done
 	Player push state: done
-	- ADD COLLISION MASK FOR BLOCK! ALSO - LAYERS FOR OBJECTS!
 
 Sound!
 		
@@ -141,6 +140,17 @@ Wall/Floor graphics
 UI
 	- Health display with hearts: not started
 	
+Past work log
+================================
+
+Tues 3 Jan
+---------------------------
+Switches - with animation, sound, and option to require hold/not: done
+
+Until Jan
+---------------------------
+Some work done, but intermittent. Log started from Jan 3 :(
+
 -------------------------------------------------------------------------
 Saturday 5 Nov (and on for a while) - Actor animation continued
 

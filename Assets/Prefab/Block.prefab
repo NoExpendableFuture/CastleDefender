@@ -146,3 +146,6 @@ MonoBehaviour:
   pushable: 1
   playerPushToMoveTime: 1
   moveSpeed: 1
+  collidesWithMask:
+    serializedVersion: 2
+    m_Bits: 1553

@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\ActorAnimator.cs" />
      <Compile Include="Assets\Block.cs" />
+     <Compile Include="Assets\PuzzleSwitch.cs" />
      <Compile Include="Assets\Scripts\Actors\Actor.cs" />
      <Compile Include="Assets\Scripts\Actors\ActorHealth.cs" />
      <Compile Include="Assets\Scripts\Actors\Input\ActorInput.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\Scripts\PuzzleDoor.cs" />
      <Compile Include="Assets\Scripts\RespawnPoint.cs" />
      <Compile Include="Assets\Scripts\Spikes.cs" />
+     <Compile Include="Assets\SwitchPuzzle.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

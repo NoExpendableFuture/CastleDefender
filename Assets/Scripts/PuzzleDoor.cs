@@ -8,4 +8,8 @@ public class PuzzleDoor : MonoBehaviour
         // TODO: Animate pls
         gameObject.SetActive(false);
     }
+    public void Close() {
+        // TODO: Animate pls
+        gameObject.SetActive(true);
+    }
 }
